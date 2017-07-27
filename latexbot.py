@@ -88,7 +88,7 @@ class LatexBot(discord.Client):
 
 			for c in self.settings['commands']['render']:
 				if msg.startswith(c):
-					latex = msg[len(c):].strip()
+					latex = msg[len(c):].strip().replace('`', '')
 					self.vprint('Latex:', latex)
 
 					num = str(random.randint(0, 2 ** 31))
